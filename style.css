@@ -1,0 +1,227 @@
+/* style sheet is connected */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(rgb(117, 123, 200), rgb(224, 195, 252), rgb(255, 194, 226));
+    color: black;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+hr{
+    border: solid 2px white;
+}
+
+header,footer{
+    display:flex;
+    height: 150px;
+    padding: 20px;
+    background-color: none;
+}
+
+footer img{
+    height: 50px;
+    width: 100px;
+}
+
+header{
+    justify-content: space-between;
+    align-items: center; 
+}
+
+
+header>img{
+    height: 150px;
+    width: 20%;
+    align-self: center;
+    justify-self: flex-start;
+}
+
+
+body h1{
+    align-self: center;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+/*SLIDESHOW BANNER*/
+
+#banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    padding: 5px;
+
+}
+
+#banner .bannerImage {
+    display: none;
+    height: 600px;
+    width: 100%;
+}
+
+/*INFO SECTION*/
+
+#info{
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+    height: 150px;
+    padding: 25px;
+    margin: 0 25px;
+    background-color: none;
+    color: white;
+    font-size: 1.0em;
+    line-height: 1.6;
+}
+
+/*SECTION WILL FILMS LISTED*/
+
+#films{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5%;
+    padding-top: 2.5%;
+}
+
+#films h2{
+    align-self: center;
+}
+
+
+#films .filmBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 400px;
+    width: 20%;
+   /* outline: solid yellow 2px;*/
+    position: relative;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255)
+    transition: transform .2s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#films .filmBox:hover {
+    transform: scale(1.10); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    opacity: 0.80;
+  }
+
+
+
+#films .filmBox h1{
+    height: 25px;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+
+#films .filmBox img{
+    align-self: center;
+    height: 320px;
+    width: 90%;
+}
+
+
+/* EXPANDED DETAILS SECTION*/
+
+#expand{
+    height: 95%;
+    width: 95%;
+    background-color: pink;
+    z-index: 1;
+    top: 0;
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /*display:none; */
+}
+.close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: black;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+  
+  
+
+#expand img{
+    align-self: center;
+    width: 65%;
+    height: 60%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 20px;
+}
+
+#expand p{
+    text-align: center;
+    padding: 0 10%;
+    font-size: 1em;
+    color: white;
+}
+
+#expand h1{
+    font-size: 3em;
+    margin: 20px;
+    text-transform: uppercase;
+}
+
+#expand h2{
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+footer h2, footer span{
+    color: white;
+    text-align: center;
+    align-self: center;
+}
+
+footer a, footer img{
+    align-self: center;
+    height: 75px;
+    width: 200px;
+}
