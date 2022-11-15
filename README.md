@@ -1,7 +1,8 @@
 # Studio-Ghibli-API-Project
-API project using the ghibliapi.heroku.app
 
 ## :purple_heart: :cherry_blossom: :dizzy: :star2: :sparkles: :purple_heart:
+
+API project using the ghibliapi.heroku.app
 
 :bulb: The inspiration for this project was to create a film gallery for Studio Ghibli that allows you to browse their films. This project uses the ghibli.heroku.app api. HTML for content, CSS for styling, and Javascript for behavior. 
 
