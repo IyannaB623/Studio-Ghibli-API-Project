@@ -1,4 +1,4 @@
-fetch("https://ghibliapi.herokuapp.com/films")
+fetch("https://ghibliapi.vercel.app/api/films")
   .then((response) => {
     if (response.ok) {
       return response.json();
@@ -112,7 +112,7 @@ function displayFilm(data){
 
 }
 
-
+//fetch("https://ghibliapi.herokuapp.com/films")
 
 
 /*
