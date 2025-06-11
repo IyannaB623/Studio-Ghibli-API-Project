@@ -8,6 +8,81 @@ fetch("https://ghibliapi.vercel.app/api/films")
   })
   .then(data => {
     console.log(data);
+    displayFilm(data);
+  })
+  .catch((error) => console.error("FETCH ERROR:", error));
+
+// close button
+let closeButton = document.getElementById("close-button");
+closeButton.addEventListener('click', () => {
+  document.getElementById("expand").style.display = "none";
+});
+
+function displayFilm(data) {
+  const filmSection = document.getElementById("films");
+  const bannerSection = document.getElementById("banner");
+
+  for (let i = 0; i < data.length; i++) {
+    const film = data[i];
+
+    // create film box
+    const theBoxSection = document.createElement('section');
+    theBoxSection.className = "filmBox";
+    theBoxSection.setAttribute('id', `${film.id}`);
+
+    // Film title
+    const heading = document.createElement('h1');
+    heading.innerHTML = film.title;
+
+    // Film image
+    const filmImg = document.createElement("img");
+    filmImg.src = film.image;
+
+    // Append elements into the film box
+    theBoxSection.appendChild(heading);
+    theBoxSection.appendChild(filmImg);
+    filmSection.appendChild(theBoxSection);
+
+    // Banner image for slideshow
+    const createImage = document.createElement("img");
+    createImage.src = film.movie_banner;
+    createImage.className = "bannerImage";
+    createImage.style.display = "none"; // Start hidden
+    bannerSection.appendChild(createImage);
+
+    //info logic
+    theBoxSection.addEventListener('click', () => {
+      document.getElementById("expand").style.display = "flex";
+      document.getElementById("title").innerHTML = film.title;
+      document.getElementById("director").innerHTML = `Director: ${film.director}`;
+      document.getElementById("picture").src = film.movie_banner;
+      document.getElementById("description").innerHTML = film.description;
+      document.getElementById("moreDetails").innerHTML = `Runtime: ${film.running_time} minutes · Release Date: ${film.release_date}`;
+      console.log(film.id);
+    });
+  }
+
+  //  Slideshow for banner images
+  const images = document.querySelectorAll(".bannerImage");
+  let i = 0;
+
+  setInterval(function () {
+    images.forEach(img => img.style.display = "none"); // Hide all
+    images[i].style.display = "block"; // Show current
+    i = (i + 1) % images.length; // Loop around
+  }, 3500);
+}
+
+/*fetch("https://ghibliapi.vercel.app/api/films")
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("NETWORK RESPONSE ERROR");
+    }
+  })
+  .then(data => {
+    console.log(data);
     displayFilm(data)
   })
   .catch((error) => console.error("FETCH ERROR:", error));
@@ -32,8 +107,6 @@ function displayFilm(data){
     const theBoxSection = document.createElement('section')
     
 
-  
-
     theBoxSection.className = "filmBox"
 
     const filmName = film.title
@@ -52,8 +125,6 @@ function displayFilm(data){
     theBoxSection.appendChild(heading)
     theBoxSection.appendChild(filmImg)
 
- 
-
 
     //banner section with slideshow
     const createImage = document.createElement("img");
@@ -65,8 +136,6 @@ function displayFilm(data){
     //CONTINUE HERE THIS WORKED AS FAR AS CLICKING ON BOX AND GETTING FUNCTION TO OCCUR NOW WORK ON EXPAND WORK
     let hey = document.getElementById(`${film.id}`);
     hey.addEventListener('click', doThis)
-
-  
     
     const bigFilmName = film.title
     const bigDirector = film.director
@@ -85,7 +154,6 @@ function displayFilm(data){
         console.log(film.id)
         console.log('the click is working still?')
     }
-
 
 
     }
@@ -111,7 +179,7 @@ function displayFilm(data){
  
   
 
-}
+}*/
 
 //fetch("https://ghibliapi.herokuapp.com/films")
 
@@ -136,13 +204,7 @@ function showfield() {
 
 
 
-
-
-
-
-
 //un comment out the description once I figure out to do an on click to expand to see more. 
-
 
 
 /*
