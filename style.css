@@ -1,163 +1,173 @@
 /* style sheet is connected */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body{
+  }
+  
+  body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-image: linear-gradient(rgb(117, 123, 200), rgb(224, 195, 252), rgb(255, 194, 226));
     color: black;
-    font-family: 'Noto Sans JP', sans-serif;
-}
-
-hr{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  hr {
     border: solid 2px white;
-}
-
-header,footer{
-    display:flex;
-    height: 150px;
+  }
+  
+  header,
+  footer {
+    display: flex;
     padding: 20px;
-    background-color: none;
-}
-
-footer img{
-    height: 50px;
-    width: 100px;
-}
-
-header{
+    height: 150px;
+  }
+  
+  header {
     justify-content: space-between;
-    align-items: center; 
-}
-
-
-header>img{
+    align-items: center;
+  }
+  
+  header > img {
     height: 150px;
     width: 20%;
-    align-self: center;
-    justify-self: flex-start;
-}
-
-
-body h1{
-    align-self: center;
+  }
+  
+  body h1 {
     text-align: center;
     margin-top: 20px;
     color: white;
-}
-
-/*SLIDESHOW BANNER*/
-
-#banner{
+  }
+  
+  /* SLIDESHOW BANNER */
+  #banner {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 600px;
     padding: 5px;
-
-}
-
-#banner .bannerImage {
-    display: none;
-    /*height: 600px;*/
+    position: relative;
+    max-height: 720px;
+    overflow: hidden;
+  }
+  
+  .bannerImage {
+    height: auto;
     width: 100%;
-}
-
-.bannerImage {
-  height: auto;
-}
-
-/*INFO SECTION*/
-
-#info{
-    display:flex;
-    text-align: center;
+    display: none;
+  }
+  
+  /* INFO SECTION */
+  #info {
+    display: flex;
     flex-direction: column;
-    height: 150px;
+    text-align: center;
     padding: 25px;
     margin: 0 25px;
-    background-color: none;
     color: white;
-    font-size: 1.0em;
+    font-size: 1em;
     line-height: 1.6;
-}
-
-/*SECTION WILL FILMS LISTED*/
-
-#films{
+  }
+  
+  /* FILM LISTINGS */
+  #films {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 5%;
-    padding-top: 2.5%;
-}
-
-#films h2{
-    align-self: center;
-}
-
-
-#films .filmBox{
+    padding: 2.5% 5%;
+  }
+  
+  #films h1,
+  #films h2 {
+    display: none;
+  }
+  
+  .filmBox {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 400px;
+    height: 420px;
     width: 20%;
-   /* outline: solid yellow 2px;*/
-    position: relative;
     margin: 15px;
     border-radius: 10px;
-    background-color: rgb(255, 255, 255)
-    transition: transform .2s;
+    background-color: white;
+    transition: transform 0.2s;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-#films .filmBox:hover {
-    transform: scale(1.10); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-    opacity: 0.80;
   }
-
-
-
-#films .filmBox h1{
-    height: 25px;
-    width: 100%;
-    font-size: 1rem;
-    text-align: center;
-    text-transform: uppercase;
-    color: white;
-}
-
-
-#films .filmBox img{
+  
+  .filmBox:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  
+  .filmBox img {
     align-self: center;
-    height: 320px;
+    height: 360px;
     width: 90%;
-}
-
-
-/* EXPANDED DETAILS SECTION*/
-
-#expand{
-    height: 95%;
-    width: 95%;
-    background-color: pink;
-    z-index: 1;
+  }
+  
+  /* EXPANDED FILM BACKGROIMD BLUR EFFECT + EXPANDED VIEW*/
+  #expand::before {
+    content: '';
+    position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(5px);
+    z-index: -1;
+  }
+  
+  #expand {
     position: fixed;
+    top: 0;
+    height: 95%;
+    width: 100%;
     display: none;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position: center;
+    color: white;
     border-radius: 15px;
+    z-index: 1;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    /*display:none; */
-}
-.close {
+  }
+  
+  #expand img {
+    width: 65%;
+    height: 65%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 20px;
+  }
+  
+  #expand p {
+    text-align: center;
+    padding: 0 10%;
+    font-size: 1em;
+    color: white;
+  }
+  
+  #expand h1 {
+    font-size: 3em;
+    margin: 20px;
+    text-transform: uppercase;
+  }
+  
+  #expand h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  /* CLOSE BUTTON */
+  .close {
     position: absolute;
     right: 32px;
     top: 32px;
@@ -165,10 +175,13 @@ body h1{
     height: 32px;
     opacity: 0.3;
   }
+  
   .close:hover {
     opacity: 1;
   }
-  .close:before, .close:after {
+  
+  .close:before,
+  .close:after {
     position: absolute;
     left: 15px;
     content: ' ';
@@ -176,56 +189,96 @@ body h1{
     width: 2px;
     background-color: black;
   }
+  
   .close:before {
     transform: rotate(45deg);
   }
+  
   .close:after {
     transform: rotate(-45deg);
   }
   
-  
-
-#expand img{
-    align-self: center;
-    width: 65%;
-    height: 60%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin-bottom: 20px;
-}
-
-#expand p{
-    text-align: center;
-    padding: 0 10%;
-    font-size: 1em;
-    color: white;
-}
-
-#expand h1{
-    font-size: 3em;
-    margin: 20px;
-    text-transform: uppercase;
-}
-
-#expand h2{
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: white;
-}
-
-footer{
+  /* FOOTER */
+  footer {
     height: 200px;
-    display: flex;
     flex-direction: column;
-}
-
-footer h2, footer span{
+    align-items: center;
+    justify-content: center;
+  }
+  
+  footer h2,
+  footer span {
     color: white;
     text-align: center;
-    align-self: center;
-}
-
-footer a, footer img{
-    align-self: center;
+  }
+  
+  footer a,
+  footer img {
     height: 75px;
     width: 200px;
-}
+  }
+
+  /* --- MOBILE RESPONSIVENESS --- */
+@media screen and (max-width: 768px) {
+    header, footer {
+      flex-direction: column;
+      height: auto;
+      text-align: center;
+    }
+  
+    header > img {
+      width: 50%;
+      height: auto;
+    }
+  
+    #info {
+      margin: 0 10px;
+      padding: 15px;
+      font-size: 0.95em;
+    }
+  
+    #films {
+      flex-direction: column;
+      align-items: center;
+      padding: 5%;
+    }
+  
+    .filmBox {
+      width: 90%;
+      height: auto;
+      margin: 10px 0;
+    }
+  
+    .filmBox img {
+      height: auto;
+      width: 100%;
+    }
+  
+    #expand img {
+      width: 90%;
+      height: auto;
+    }
+  
+    #expand p {
+      padding: 0 5%;
+      font-size: 0.95em;
+    }
+  
+    #expand h1 {
+      font-size: 2em;
+    }
+  
+    #expand h2 {
+      font-size: 1.2em;
+    }
+  
+    .close {
+      top: 20px;
+      right: 20px;
+    }
+  
+    footer img {
+      width: 60%;
+      height: auto;
+    }
+  }
