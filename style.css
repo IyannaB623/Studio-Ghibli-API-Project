@@ -64,8 +64,12 @@ body h1{
 
 #banner .bannerImage {
     display: none;
-    height: 600px;
+    /*height: 600px;*/
     width: 100%;
+}
+
+.bannerImage {
+  height: auto;
 }
 
 /*INFO SECTION*/
