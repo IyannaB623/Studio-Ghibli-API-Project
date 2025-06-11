@@ -1,16 +1,17 @@
 fetch("https://ghibliapi.vercel.app/api/films")
   .then((response) => {
+    console.log("Response object:", response); // 👀 Check this!
     if (response.ok) {
       return response.json();
     } else {
-      throw new Error("NETWORK RESPONSE ERROR");
+      throw new Error("NETWORK RESPONSE ERROR: " + response.status);
     }
   })
   .then(data => {
-    console.log(data);
+    console.log(" Data received:", data);
     displayFilm(data);
   })
-  .catch((error) => console.error("FETCH ERROR:", error));
+  .catch((error) => console.error(" FETCH ERROR:", error));
 
 // close button
 let closeButton = document.getElementById("close-button");
