@@ -1,4 +1,4 @@
-fetch("https://ghibliapi.vercel.app/api/films")
+fetch("films.json")
   .then((response) => {
     console.log("Response object:", response); // 👀 Check this!
     if (response.ok) {
