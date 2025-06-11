@@ -12,15 +12,22 @@ fetch("https://ghibliapi.vercel.app/api/films")
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
-  
+ let closeButton = document.getElementById("close-button")
+    closeButton.addEventListener('click', closeDetails);
+
+function closeDetails(){
+    document.getElementById("expand").style.display = "none"; 
+    } 
 
 
 function displayFilm(data){
-
+    const filmSection = document.getElementById("films");
+    const bannerSection = document.getElementById("banner");
+  
     for(let i=0; i<data.length; i++){
 
     const film = data[i]
-    const filmSection = document.getElementById("films");
+    
     const heading = document.createElement('h1');
     const theBoxSection = document.createElement('section')
     
@@ -49,7 +56,6 @@ function displayFilm(data){
 
 
     //banner section with slideshow
-    const bannerSection = document.getElementById("banner")
     const createImage = document.createElement("img");
     const bannerimages = data[i].movie_banner
     createImage.src = bannerimages
@@ -60,12 +66,7 @@ function displayFilm(data){
     let hey = document.getElementById(`${film.id}`);
     hey.addEventListener('click', doThis)
 
-    let closeButton = document.getElementById("close-button")
-    closeButton.addEventListener('click', closeDetails)
-
-    function closeDetails(){
-    document.getElementById("expand").style.display = "none"; 
-    }
+  
     
     const bigFilmName = film.title
     const bigDirector = film.director
