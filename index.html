@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
-    <title>Studio Ghibli API Project</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Studio Ghibli API Project</title>
 </head>
 <body>
-    <header>
-            <img src="385-3859275_totoro-studio-ghibli-logo-hd-png-download.png" alt="studio ghibli logo">
-    </header>
+  <header>
+    <img src="385-3859275_totoro-studio-ghibli-logo-hd-png-download.png" alt="studio ghibli logo" />
+  </header>
 
+  <section id="banner"></section>
 
-    <section id="banner">
-            <!-- <img src="images/ponyoinwater.jpg" alt="scene of characters on train from studio ghibli film" class="slideimage"> 
-            <img src="images/spiritedawaypictwo.jpg" alt="studio ghibli logo" class="slideimage">
-            <img src="images/ponyopic.jpg" alt="studio ghibli logo" class="slideimage">
-            <img src="images/totoropic.jpg" alt="studio ghibli logo" class="slideimage"> -->
-    </section>
+  <section id="info">
+    <p>"Once you've met someone you never really forget them"</p>
+    <p>
+      Studio Ghibli is an animated studio based in Japan that was founded June 15th, 1985 by Hayao Miyazaki, Toshio Suzuki, and Isao Takahata.
+      The Studio's intention was to "blow a new wind through the anime industry", but its impact soon blew past its borders.
+      Browse through the award-winning works of Studio Ghibli powered by the
+      <a href="https://ghibliapi.vercel.app/">Studio Ghibli API</a>.
+    </p>
+  </section>
 
-    <section id="info">
-        <p>"Once you've met someone you never really forget them. TEST"</p>
-        <p>Studio Ghibli is an animated studio based in Japan that was founded June 15th,1985 by Hayao Miyazaki, Toshio Suzuki, and Isao Takahata. The Studio's intention was to "blow a new wind through the anime industry", but its impact soon blow a wind past its borders. Browse through the wonderful award-winning works of Studio Ghibli powered by the <a href="https://ghibliapi.herokuapp.com/">Studio Ghibli API</a>. </p>
-    </section>
+  <hr />
 
-    <hr>
+  <h1>Films</h1>
+  <section id="films"></section>
 
-    <h1>Films</h1>
+  <section id="expand">
+    <a href="#" class="close" id="close-button"></a>
+    <h1 id="title"></h1>
+    <h2 id="director"></h2>
+    <img id="picture" />
+    <p id="description"></p>
+    <p id="moreDetails"></p>
+  </section>
 
-    <section id="films">   
-          
-    <section id="expand">
-        <a href="#" class="close" id="close-button"></a>
-        <h1 id="title"></h1>
-        <h2 id="director"></h2>
-        <img id="picture">
-        <p id="description"></p>
-        <p id="moreDetails"></p>
-        
-    </section>
-        
-    </section>
+  <hr />
 
-    <hr>
+  <footer>
+    <h2>Resources</h2>
+    <span><a href="https://ghibliapi.vercel.app/">Studio Ghibli API</a></span>
+    <span>Created By</span>
+    <a href="https://iyannadevelops.netlify.app/">
+      <img src="IyannaDevLogo copy.png" alt="Iyanna Develops Logo" />
+    </a>
+  </footer>
 
-    <footer>
-        <h2>Resources</h2>
-        <span><a href="https://ghibliapi.herokuapp.com/"> Studio Ghibli API </a></span>
-        <span>Created By</span>
-        <a href="https://iyannadevelops.netlify.app/"><img src="IyannaDevLogo copy.png" alt="Iyanna Develops Logo"></a>
-    </footer>
-    
-<script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
