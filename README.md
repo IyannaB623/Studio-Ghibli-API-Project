@@ -58,7 +58,7 @@ Users can:
 ## 📸 Screenshots  
 | Before | After |
 |--------|-------|
-|![studioghibligif](https://user-images.githubusercontent.com/87724081/202005100-d84d2bd3-a8e3-4f87-9ab7-c45eb61d4c1a.gif)|
+|![studioghibligif](https://user-images.githubusercontent.com/87724081/202005100-d84d2bd3-a8e3-4f87-9ab7-c45eb61d4c1a.gif)|![studioghibligif](---)|
 
 ---
 
